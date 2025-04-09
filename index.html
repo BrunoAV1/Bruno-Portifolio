@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruno Araujo de Vasconcellos | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card-bg: rgba(24, 28, 44, 0.7);
+      --text: #ffffff;
+      --accent: #00f7ff;
+    }
+
+    body {
+      font-family: 'Inter', monospace;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    h1, h2 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #00f7ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.2rem;
+      backdrop-filter: blur(6px);
+      margin-bottom: 1rem;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .socials a:hover {
+      background: #00e0ff;
+      transform: scale(1.05);
+    }
+
+    .typewriter {
+      white-space: pre-line;
+      font-family: monospace;
+      border-left: 2px solid var(--accent);
+      padding-left: 10px;
+      overflow: hidden;
+      animation: typing 4s steps(100, end), blink 1s step-end infinite;
+      max-width: 100%;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: var(--accent); }
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 247, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0, 247, 255, 0.2);
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+
+    .skill-label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      position: relative;
+    }
+
+    .progress {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    .skill-desc {
+      font-size: 0.9rem;
+      opacity: 0;
+      height: 0;
+      transition: opacity 0.3s ease;
+      overflow: hidden;
+    }
+
+    .skill-item:hover .skill-desc,
+    .skill-item:active .skill-desc {
+      opacity: 1;
+      height: auto;
+      margin-top: 0.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <section class="section">
+    <h1>Bruno Araujo de Vasconcellos</h1>
+    <div class="card typewriter">
+> Estudante de Análise e Desenvolvimento de Sistemas
+> Apaixonado por resolver problemas com tecnologia
+> Foco atual: Desenvolvimento Web & Análise de Dados
+> Objetivo: Me tornar um Desenvolvedor Full Stack
+> Interesses: Inteligência Artificial, Cibersegurança, Automações
+> Linguagens: Python, Java, HTML, CSS, JavaScript
+    </div>
+    <div class="socials">
+      <a href="https://github.com/BrunoAV1" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/bruno-vasconcellos-360070351" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projetos</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <strong>Calculadora Computacional</strong>
+        <p>Projeto desenvolvido em Python, focado em resolver operações matemáticas de forma prática e precisa.</p>
+        <a href="https://github.com/BrunoAV1/Calculadora-Computacional" target="_blank">Ver no GitHub</a>
+      </div>
+      <div class="project-card">
+        <strong>Detector de Gestos</strong>
+        <p>Sistema com visão computacional utilizando Python para interpretar movimentos manuais.</p>
+        <a href="https://github.com/BrunoAV1/Detector-de-Gestos" target="_blank">Ver no GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Habilidades</h2>
+    <div class="card">
+      <div class="skill-item">
+        <div class="skill-label">Python</div>
+        <div class="progress-bar"><div class="progress" style="width: 25%"></div></div>
+        <div class="skill-desc">Iniciante-intermediário</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Java</div>
+        <div class="progress-bar"><div class="progress" style="width: 10%"></div></div>
+        <div class="skill-desc">Iniciante</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">HTML</div>
+        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
+        <div class="skill-desc">Intermediário</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">CSS</div>
+        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
+        <div class="skill-desc">Intermediário</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">JavaScript</div>
+        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
+        <div class="skill-desc">Intermediário</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    Desenvolvido por Bruno Araujo de Vasconcellos © Todos os direitos reservados
+  </div>
+
+  <script>
+    AOS.init();
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00f7ff",
+          opacity: 0.3,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          out_mode: "out"
+        }
+      }
+    });
+  </script>
+</body>
+</html>
