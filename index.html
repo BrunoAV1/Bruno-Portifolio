@@ -10,18 +10,19 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f1a;
-      --card-bg: rgba(24, 28, 44, 0.7);
-      --text: #ffffff;
-      --accent: #00f7ff;
+      --bg-gradient: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      --card-bg: rgba(20, 20, 20, 0.85);
+      --text: #e0e0e0;
+      --accent: #888;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', monospace;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
+      background: var(--bg-gradient);
       color: var(--text);
+      overflow-x: hidden;
     }
 
     #particles-js {
@@ -33,65 +34,75 @@
       left: 0;
     }
 
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     h1, h2 {
       font-family: 'Orbitron', sans-serif;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(90deg, #00f7ff, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
 
     .section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+      max-width: 960px;
+      margin: 4rem auto;
+      padding: 0 1.2rem;
       position: relative;
       z-index: 1;
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: 16px;
-      padding: 1.2rem;
-      backdrop-filter: blur(6px);
-      margin-bottom: 1rem;
+      border-radius: 18px;
+      padding: 1.5rem;
+      backdrop-filter: blur(8px);
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
     .socials {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.2rem;
       margin-top: 1rem;
     }
 
     .socials a {
-      display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 24px;
       background: var(--accent);
-      color: #000;
+      color: #fff;
       font-weight: bold;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
+      transition: all 0.3s ease;
     }
 
     .socials a:hover {
-      background: #00e0ff;
-      transform: scale(1.05);
+      background: #aaa;
+      transform: scale(1.07);
     }
 
     .typewriter {
       white-space: pre-line;
       font-family: monospace;
-      border-left: 2px solid var(--accent);
-      padding-left: 10px;
-      overflow: hidden;
-      animation: typing 4s steps(100, end), blink 1s step-end infinite;
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      animation: typing 3.5s steps(80, end), blink 1s step-end infinite;
       max-width: 100%;
     }
 
@@ -107,60 +118,60 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
     .project-card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0, 247, 255, 0.1);
+      border-radius: 14px;
+      padding: 1.2rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 25px rgba(0, 247, 255, 0.2);
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 0 30px rgba(100, 100, 100, 0.3);
     }
 
     .project-card a {
       display: inline-block;
       margin-top: 0.5rem;
       color: var(--accent);
+      font-weight: 500;
       text-decoration: underline;
     }
 
     .skill-item {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .skill-label {
       font-weight: bold;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
 
     .progress-bar {
       width: 100%;
-      background: #222;
-      border-radius: 10px;
+      background: #111;
+      border-radius: 12px;
       overflow: hidden;
-      height: 20px;
-      position: relative;
+      height: 22px;
     }
 
     .progress {
       height: 100%;
       background: var(--accent);
       width: 0;
-      transition: width 1s ease;
+      transition: width 1.2s ease;
     }
 
     .skill-desc {
       font-size: 0.9rem;
       opacity: 0;
       height: 0;
-      transition: opacity 0.3s ease;
+      transition: all 0.4s ease;
       overflow: hidden;
     }
 
@@ -173,24 +184,24 @@
 
     .footer {
       text-align: center;
-      font-size: 0.85rem;
-      margin-top: 4rem;
+      font-size: 0.9rem;
+      margin-top: 5rem;
       padding-bottom: 2rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
 
-  <section class="section">
+  <section class="section fade-in-up">
     <h1>Bruno Araujo de Vasconcellos</h1>
     <div class="card typewriter">
-> Estudante de Análise e Desenvolvimento de Sistemas
-> Apaixonado por resolver problemas com tecnologia
-> Foco atual: Desenvolvimento Web & Análise de Dados
-> Objetivo: Me tornar um Desenvolvedor Full Stack
-> Interesses: Inteligência Artificial, Cibersegurança, Automações
-> Linguagens: Python, Java, HTML, CSS, JavaScript
+> Estudante de Análise e Desenvolvimento de Sistemas  
+> Apaixonado por resolver problemas com tecnologia e construir soluções reais para o mundo moderno.  
+> Tenho como foco o desenvolvimento web e a análise de dados, mas minha ambição vai além: desejo me tornar um profissional full stack com especialização em segurança de redes e segurança da informação.  
+> Sou fascinado por cibersegurança, automações e inteligência artificial, buscando constantemente ampliar meus conhecimentos e habilidades técnicas.  
+> Busco transformar ideias em soluções eficientes, com foco em performance, usabilidade e proteção da informação.
     </div>
     <div class="socials">
       <a href="https://github.com/BrunoAV1" target="_blank">GitHub</a>
@@ -198,7 +209,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section fade-in-up">
     <h2>Projetos</h2>
     <div class="project-grid">
       <div class="project-card">
@@ -214,38 +225,28 @@
     </div>
   </section>
 
-  <section class="section">
-    <h2>Habilidades</h2>
+  <section class="section fade-in-up">
+    <h2>Competências</h2>
     <div class="card">
       <div class="skill-item">
         <div class="skill-label">Python</div>
-        <div class="progress-bar"><div class="progress" style="width: 25%"></div></div>
-        <div class="skill-desc">Iniciante-intermediário</div>
+        <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+        <div class="skill-desc">Desenvolvimento de scripts, automações, análise de dados e integração com APIs.</div>
       </div>
       <div class="skill-item">
         <div class="skill-label">Java</div>
-        <div class="progress-bar"><div class="progress" style="width: 10%"></div></div>
-        <div class="skill-desc">Iniciante</div>
+        <div class="progress-bar"><div class="progress" style="width: 40%"></div></div>
+        <div class="skill-desc">Programação orientada a objetos, estruturação lógica e construção de aplicações básicas.</div>
       </div>
       <div class="skill-item">
-        <div class="skill-label">HTML</div>
-        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
-        <div class="skill-desc">Intermediário</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label">CSS</div>
-        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
-        <div class="skill-desc">Intermediário</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label">JavaScript</div>
-        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
-        <div class="skill-desc">Intermediário</div>
+        <div class="skill-label">Flutter / Dart</div>
+        <div class="progress-bar"><div class="progress" style="width: 35%"></div></div>
+        <div class="skill-desc">Experiência com construção e testes de interfaces para aplicações móveis híbridas.</div>
       </div>
     </div>
   </section>
 
-  <div class="footer">
+  <div class="footer fade-in-up">
     Desenvolvido por Bruno Araujo de Vasconcellos © Todos os direitos reservados
   </div>
 
@@ -253,16 +254,16 @@
     AOS.init();
     particlesJS("particles-js", {
       particles: {
-        number: { value: 80 },
-        color: { value: "#ffffff" },
+        number: { value: 120 },
+        color: { value: "#aaaaaa" },
         shape: { type: "circle" },
-        opacity: { value: 0.3 },
+        opacity: { value: 0.5 },
         size: { value: 2 },
         line_linked: {
           enable: true,
-          distance: 150,
-          color: "#00f7ff",
-          opacity: 0.3,
+          distance: 120,
+          color: "#999999",
+          opacity: 0.4,
           width: 1
         },
         move: {
